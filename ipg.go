@@ -14,8 +14,8 @@ import (
 var cliOutputSettings output.OutputInformationSettings
 var cli struct {
 	Subnet        string `arg:"" help:"IPv6 Subnet"`
-	Random        bool   `short:"r" required:"" help:"Generate a random IPv6 address on the given subnet."`
-	Name          string `short:"n" required:"" default:"hostname" help:"Specify the hostname of a machine, an IPv6 address will be generated based on it."`
+	Random        bool   `short:"r" help:"Generate a random IPv6 address on the given subnet."`
+	Name          string `short:"n" default:"hostname" help:"Specify the hostname of a machine, an IPv6 address will be generated based on it."`
 	Silent        bool   `short:"s" help:"Only display values without their labels."`
 	Format        string `name:"format" short:"f" enum:"console,json" default:"console" help:"Specify the type of output. Possible values: console, json"`
 	Address       bool   `short:"a" help:"Display the generated IP address."`

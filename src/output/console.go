@@ -26,7 +26,7 @@ func (c IpgConsoleOutput) Render() []byte {
 	}
 
 	// Display the ARPA version of the IP address if the flag is set
-	if c.Config.AllData || c.Config.Address {
+	if c.Config.AllData || c.Config.Reverse {
 		if c.Config.Silent {
 			output.WriteString(fmt.Sprintf("%s\n", c.Data.IPReverse))
 		} else {
