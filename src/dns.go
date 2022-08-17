@@ -11,10 +11,10 @@ func GenerateDNSRecord(ip string, ttl int, hostname string) string {
 		hostname += "."
 	}
 
-	return fmt.Sprintf("%s\t%d\tIN\tAAAA\t%s", hostname, ttl, ip)
+	return fmt.Sprintf("%s    %d    IN    AAAA    %s", hostname, ttl, ip)
 }
 
 // Generate a ARPA record ready to be paste on a Bind compatible zone
 func GenerateReverseDNSRecord(ip string, ttl int, hostname string) string {
-	return fmt.Sprintf("%s.\t%d\tIN\tPTR\t%s", ip, ttl, hostname)
+	return fmt.Sprintf("%s.    %d    IN    PTR    %s", ip, ttl, hostname)
 }

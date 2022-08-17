@@ -12,9 +12,9 @@ type OutputInformationSettings struct {
 }
 
 type IpgOutputData struct {
-	Hostname      string
-	IPAddress     string
-	IPReverse     string
-	DNSRecord     string
-	ReverseRecord string
+	Hostname      string `json:"hostname"`
+	IPAddress     string `json:"ip_addr"`
+	IPReverse     string `json:"arpa_addr"`
+	DNSRecord     string `json:"dns_record"`
+	ReverseRecord string `json:"ptr_record"`
 }
