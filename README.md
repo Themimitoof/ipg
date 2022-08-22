@@ -14,14 +14,6 @@ hostname of a machine and want to obtain the DNS and PTR records ready to paste 
  - Return a DNS and/or a PTR record
  - Get the output in a JSON format or in a more humain friendly one
 
-Last remaining things to do:
-
- - [ ] Add some unit tests
- - [ ] Add goreleaser to the project
- - [ ] Complete this file
- - [ ] Release the first release
-
-
 ## Installation
 
 Until no releases are available on GitHub, ensure you have [Go](https://go.dev/) installed and well configured. To install it, simply type:
@@ -33,7 +25,15 @@ go install github.com/themimitoof/ipg
 Otherwise, you can use the Docker image by typing:
 
 ```bash
-docker run --rm themimitoof/ipg --help
+docker run --rm docker pull ghcr.io/themimitoof/ipg --help
+```
+
+**Note:** You can also pull the image based on the ``main`` branch or from a specific version by typing:
+
+```
+docker pull ghcr.io/themimitoof/ipg:main
+# or
+docker pull ghcr.io/themimitoof/ipg:v1.0.0
 ```
 
 ## Usage
