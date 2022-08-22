@@ -1,3 +1,4 @@
 ipg
 build/
 dist/
+coverage.*
