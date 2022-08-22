@@ -1,0 +1,68 @@
+project_name: ipg
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: ipg-binaries
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      # - windows # XXX: Not tested for Windows... yet.
+      - darwin
+      - freebsd
+      - openbsd
+    goarch:
+      - amd64
+      - arm
+      - arm64
+    goarm:
+      - 7
+
+archives:
+  - replacements:
+      darwin: MacOS
+      linux: Linux
+      windows: Windows
+      amd64: x86_64
+      arm: armhf
+
+nfpms:
+  - id: ipg-pkgs
+    package_name: ipg
+    vendor: Themimitoof
+    homepage: https://github.com/themimitoof/ipg
+    maintainer: Michael V. <dev@mvieira.fr>
+    license: MIT
+    formats:
+      - apk
+      - deb
+      - rpm
+    builds:
+      - ipg-binaries
+    replacements:
+      darwin: MacOS
+      linux: Linux
+      windows: Windows
+      amd64: x86_64
+      arm: armhf
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+release:
+  draft: true
+  footer: |
+    That's all for this new release of ipg {{ .Tag }}!
