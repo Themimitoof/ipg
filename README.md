@@ -1,4 +1,6 @@
 # ipg: A simple IPv6 address generator for lazy netadmins
+![GitHub](https://img.shields.io/github/license/themimitoof/ipg) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/themimitoof/ipg) [![codecov](https://codecov.io/gh/Themimitoof/ipg/branch/main/graph/badge.svg?token=43QQLDVUQ5)](https://codecov.io/gh/Themimitoof/ipg)
+
 
 `ipg` is a small tool for netadmins wanting to generate random IPv6 addresses or based on the
 hostname of a machine and want to obtain the DNS and PTR records ready to paste on their DNS zone.
@@ -16,16 +18,19 @@ hostname of a machine and want to obtain the DNS and PTR records ready to paste 
 
 ## Installation
 
-Until no releases are available on GitHub, ensure you have [Go](https://go.dev/) installed and well configured. To install it, simply type:
+You can get the binaries for your operating system and your platform architecture from the
+[releases page](https://github.com/Themimitoof/ipg/releases).
+
+You can also compile and install it manually by simply typing:
 
 ```bash
 go install github.com/themimitoof/ipg
 ```
 
-Otherwise, you can use the Docker image by typing:
+You can also use the Docker image by typing:
 
 ```bash
-docker run --rm docker pull ghcr.io/themimitoof/ipg --help
+docker run --rm ghcr.io/themimitoof/ipg --help
 ```
 
 **Note:** You can also pull the image based on the ``main`` branch or from a specific version by typing:
@@ -119,6 +124,14 @@ $ ipg -r -n hello.foobar.com -f json 2001:db8:beef::/64 | jq
 ```
 
 **Note:** filters are not available with the `json` format.
+
+## Contributions
+
+In case you have a suggestion or want a new feature, feel free to open a [discussion](https://github.com/Themimitoof/ipg/discussions).
+
+If you found a bug, you can [open an issue](https://github.com/Themimitoof/ipg/issues).
+
+In case you are able to fix by yourself a bug, enhance the code or implement a new feature, feel free to send a [Pull request](https://github.com/Themimitoof/ipg/pulls).
 
 ## License
 
